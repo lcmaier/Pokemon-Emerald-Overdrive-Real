@@ -1014,11 +1014,12 @@ LittlerootTown_Text_CanUsePCToStoreItems:
 	.string "The power of science is staggering!$"
 
 LittlerootTown_Text_BirchSpendsDaysInLab:
-	.string "PROF. BIRCH spends days in his LAB\n"
-	.string "studying, then he'll suddenly go out in\l"
-	.string "the wild to do more research…\p"
-	.string "When does PROF. BIRCH spend time\n"
-	.string "at home?$"
+	.string "PROF. BIRCH used to have a bunch of\n"
+	.string "{COLOR RED}rare pokemon {COLOR DARK_GRAY}from other regions,\l"
+	.string "but then one day most of them escaped.\p"
+	.string "I've seen some of the {COLOR BLUE}Water {COLOR DARK_GRAY}and {COLOR GREEN}Grass\n"
+	.string "{COLOR DARK_GRAY}types past this pond, but I'm not sure\l"
+	.string "where the {COLOR RED}Fire {COLOR DARK_GRAY}ones went...$"
 
 LittlerootTown_Text_IfYouGoInGrassPokemonWillJumpOut:
 	.string "Um, um, um!\p"

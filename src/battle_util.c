@@ -4180,6 +4180,13 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u16 ability, u8 special, u16 move
                 gSpecialStatuses[battler].intimidatedMon = 1;
             }
             break;
+        case ABILITY_MYSTIFY:
+            if (!(gSpecialStatuses[battler].mystifiedMon))
+            {
+                gBattleResources->flags->flags[battler] |= RESOURCE_FLAG_MYSITIFIED;
+                gSpecialStatuses[battler].mystifiedMon = 1;
+            }
+            break;
         case ABILITY_FORECAST:
         case ABILITY_FLOWER_GIFT:
             effect = TryWeatherFormChange(battler);
@@ -5199,6 +5206,29 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u16 ability, u8 special, u16 move
                     gBattlescriptCurrInstr = BattleScript_IntimidateActivates;
                 }
                 battler = gBattlerAbility = gBattleStruct->intimidateBattler = i;
+                effect++;
+                break;
+            }
+        }
+        break;
+    case ABILITYEFFECT_MYSTIFY1:
+    case ABILITYEFFECT_MYSTIFY2:
+        for (i = 0; i < gBattlersCount; i++)
+        {
+            if (gBattleMons[i].ability == ABILITY_MYSTIFY && gBattleResources->flags->flags[i] & RESOURCE_FLAG_MYSITIFIED)
+            {
+                gLastUsedAbility = ABILITY_MYSTIFY;
+                gBattleResources->flags->flags[i] &= ~(RESOURCE_FLAG_MYSITIFIED);
+                if (caseID == ABILITYEFFECT_MYSTIFY1)
+                {
+                    BattleScriptPushCursorAndCallback(BattleScript_MystifyActivatesEnd3);
+                }
+                else
+                {
+                    BattleScriptPushCursor();
+                    gBattlescriptCurrInstr = BattleScript_MystifyActivates;
+                }
+                battler = gBattlerAbility = gBattleStruct->mystifyBattler = i;
                 effect++;
                 break;
             }

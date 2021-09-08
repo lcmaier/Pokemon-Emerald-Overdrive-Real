@@ -6851,6 +6851,48 @@ BattleScript_IntimidatePrevented:
 	call BattleScript_TryAdrenalineOrb
 	goto BattleScript_IntimidateActivatesLoopIncrement
 
+BattleScript_MystifyActivatesEnd3::
+	call BattleScript_PauseMystifyActivates
+	end3
+
+BattleScript_PauseMystifyActivates:
+	pause B_WAIT_TIME_SHORT
+BattleScript_MystifyActivates::
+	setbyte gBattlerTarget, 0
+	call BattleScript_AbilityPopUp
+BattleScript_MystifyActivatesLoop:
+	setstatchanger STAT_SPATK, 1, TRUE
+	trygetmystifytarget BattleScript_MystifyActivatesReturn
+	jumpifstatus2 BS_TARGET, STATUS2_SUBSTITUTE, BattleScript_MystifyActivatesLoopIncrement
+	jumpifability BS_TARGET, ABILITY_CLEAR_BODY, BattleScript_MystifyPrevented
+	jumpifability BS_TARGET, ABILITY_HYPER_CUTTER, BattleScript_MystifyPrevented
+	jumpifability BS_TARGET, ABILITY_WHITE_SMOKE, BattleScript_MystifyPrevented
+.if B_UPDATED_INTIMIDATE >= GEN_8
+	jumpifability BS_TARGET, ABILITY_INNER_FOCUS, BattleScript_MystifyPrevented
+	jumpifability BS_TARGET, ABILITY_SCRAPPY, BattleScript_MystifyPrevented
+	jumpifability BS_TARGET, ABILITY_OWN_TEMPO, BattleScript_MystifyPrevented
+	jumpifability BS_TARGET, ABILITY_OBLIVIOUS, BattleScript_MystifyPrevented
+.endif
+	statbuffchange STAT_BUFF_NOT_PROTECT_AFFECTED | STAT_BUFF_ALLOW_PTR, BattleScript_MystifyActivatesLoopIncrement
+	jumpifbyte CMP_GREATER_THAN, cMULTISTRING_CHOOSER, 1, BattleScript_MystifyActivatesLoopIncrement
+	setgraphicalstatchangevalues
+	playanimation BS_TARGET, B_ANIM_STATS_CHANGE, sB_ANIM_ARG1
+	printstring STRINGID_PKMNCUTSSPAWITH
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_MystifyActivatesLoopIncrement:
+	addbyte gBattlerTarget, 1
+	goto BattleScript_MystifyActivatesLoop
+BattleScript_MystifyActivatesReturn:
+	return
+BattleScript_MystifyPrevented:
+	pause B_WAIT_TIME_SHORT
+	call BattleScript_AbilityPopUp
+	setbyte gBattleCommunication STAT_SPATK
+	stattextbuffer BS_ATTACKER
+	printstring STRINGID_STATWASNOTLOWERED
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_MystifyActivatesLoopIncrement
+
 BattleScript_DroughtActivates::
 	pause B_WAIT_TIME_SHORT
 	call BattleScript_AbilityPopUp

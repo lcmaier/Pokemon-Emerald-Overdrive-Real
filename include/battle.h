@@ -65,8 +65,9 @@ struct ResourceFlags
 #define RESOURCE_FLAG_ROOST          0x2
 #define RESOURCE_FLAG_UNBURDEN       0x4
 #define RESOURCE_FLAG_INTIMIDATED    0x8
-#define RESOURCE_FLAG_TRACED         0x10
-#define RESOURCE_FLAG_EMERGENCY_EXIT 0x20
+#define RESOURCE_FLAG_MYSITIFIED     0x10
+#define RESOURCE_FLAG_TRACED         0x20
+#define RESOURCE_FLAG_EMERGENCY_EXIT 0x40
 
 struct DisableStruct
 {
@@ -156,6 +157,7 @@ struct SpecialStatus
     u8 lightningRodRedirected:1;
     u8 restoredBattlerSprite: 1;
     u8 intimidatedMon:1;
+    u8 mystifiedMon:1;
     u8 traced:1;
     u8 ppNotAffectedByPressure:1;
     u8 flag40:1;
@@ -539,6 +541,7 @@ struct BattleStruct
     u16 choicedMove[MAX_BATTLERS_COUNT];
     u16 changedItems[MAX_BATTLERS_COUNT];
     u8 intimidateBattler;
+    u8 mystifyBattler;
     u8 switchInItemsCounter;
     u8 arenaTurnCounter;
     u8 turnSideTracker;

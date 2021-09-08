@@ -526,6 +526,7 @@ static void Cmd_assistattackselect(void);
 static void Cmd_trysetmagiccoat(void);
 static void Cmd_trysetsnatch(void);
 static void Cmd_trygetintimidatetarget(void);
+static void Cmd_trygetmystifytarget(void);
 static void Cmd_switchoutabilities(void);
 static void Cmd_jumpifhasnohp(void);
 static void Cmd_getsecretpowereffect(void);
@@ -815,6 +816,7 @@ void (* const gBattleScriptingCommandsTable[])(void) =
     Cmd_trygetbaddreamstarget,                   //0xFD
     Cmd_tryworryseed,                            //0xFE
     Cmd_metalburstdamagecalculator,              //0xFF
+    Cmd_trygetmystifytarget,
 };
 
 const struct StatFractions gAccuracyStageRatios[] =
@@ -6004,6 +6006,7 @@ static void Cmd_switchineffects(void)
         if (AbilityBattleEffects(ABILITYEFFECT_ON_SWITCHIN, gActiveBattler, 0, 0, 0)
             || ItemBattleEffects(ITEMEFFECT_ON_SWITCH_IN, gActiveBattler, FALSE)
             || AbilityBattleEffects(ABILITYEFFECT_INTIMIDATE2, 0, 0, 0, 0)
+            || AbilityBattleEffects(ABILITYEFFECT_MYSTIFY2, 0, 0, 0, 0)
             || AbilityBattleEffects(ABILITYEFFECT_TRACE2, 0, 0, 0, 0)
             || AbilityBattleEffects(ABILITYEFFECT_FORECAST, 0, 0, 0, 0))
             return;
@@ -6886,7 +6889,7 @@ static void PutMonIconOnLvlUpBox(void)
     u16 species = GetMonData(&gPlayerParty[gBattleStruct->expGetterMonId], MON_DATA_SPECIES);
     u32 personality = GetMonData(&gPlayerParty[gBattleStruct->expGetterMonId], MON_DATA_PERSONALITY);
 
-    const u8* iconPtr = GetMonIconPtr(species, personality, 1);
+    const u8* iconPtr = GetMonIconPtr(species, personality);
     iconSheet.data = iconPtr;
     iconSheet.size = 0x200;
     iconSheet.tag = MON_ICON_LVLUP_BOX_TAG;
@@ -7477,6 +7480,7 @@ static void Cmd_various(void)
     case VARIOUS_RESET_INTIMIDATE_TRACE_BITS:
         gSpecialStatuses[gActiveBattler].intimidatedMon = 0;
         gSpecialStatuses[gActiveBattler].traced = 0;
+        gSpecialStatuses[gActiveBattler].mystifiedMon = 0;
         gSpecialStatuses[gActiveBattler].switchInAbilityDone = 0;
         break;
     case VARIOUS_UPDATE_CHOICE_MOVE_ON_LVL_UP:
@@ -7637,6 +7641,7 @@ static void Cmd_various(void)
         AbilityBattleEffects(ABILITYEFFECT_ON_SWITCHIN, gActiveBattler, 0, 0, 0);
         AbilityBattleEffects(ABILITYEFFECT_INTIMIDATE2, gActiveBattler, 0, 0, 0);
         AbilityBattleEffects(ABILITYEFFECT_TRACE2, gActiveBattler, 0, 0, 0);
+        AbilityBattleEffects(ABILITYEFFECT_MYSTIFY2, gActiveBattler, 0, 0, 0);
         return;
     case VARIOUS_SAVE_TARGET:
         gBattleStruct->savedBattlerTarget = gBattlerTarget;
@@ -11674,6 +11679,29 @@ static void Cmd_trygetintimidatetarget(void)
     u8 side;
 
     gBattleScripting.battler = gBattleStruct->intimidateBattler;
+    side = GetBattlerSide(gBattleScripting.battler);
+
+    PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gBattleMons[gBattleScripting.battler].ability)
+
+    for (;gBattlerTarget < gBattlersCount; gBattlerTarget++)
+    {
+        if (GetBattlerSide(gBattlerTarget) == side)
+            continue;
+        if (!(gAbsentBattlerFlags & gBitTable[gBattlerTarget]))
+            break;
+    }
+
+    if (gBattlerTarget >= gBattlersCount)
+        gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 1);
+    else
+        gBattlescriptCurrInstr += 5;
+}
+
+static void Cmd_trygetmystifytarget(void)
+{
+    u8 side;
+
+    gBattleScripting.battler = gBattleStruct->mystifyBattler;
     side = GetBattlerSide(gBattleScripting.battler);
 
     PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gBattleMons[gBattleScripting.battler].ability)
