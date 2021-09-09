@@ -526,7 +526,6 @@ static void Cmd_assistattackselect(void);
 static void Cmd_trysetmagiccoat(void);
 static void Cmd_trysetsnatch(void);
 static void Cmd_trygetintimidatetarget(void);
-static void Cmd_trygetmystifytarget(void);
 static void Cmd_switchoutabilities(void);
 static void Cmd_jumpifhasnohp(void);
 static void Cmd_getsecretpowereffect(void);
@@ -816,7 +815,6 @@ void (* const gBattleScriptingCommandsTable[])(void) =
     Cmd_trygetbaddreamstarget,                   //0xFD
     Cmd_tryworryseed,                            //0xFE
     Cmd_metalburstdamagecalculator,              //0xFF
-    Cmd_trygetmystifytarget,
 };
 
 const struct StatFractions gAccuracyStageRatios[] =
@@ -11677,31 +11675,15 @@ static void Cmd_trysetsnatch(void) // snatch
 static void Cmd_trygetintimidatetarget(void)
 {
     u8 side;
-
-    gBattleScripting.battler = gBattleStruct->intimidateBattler;
-    side = GetBattlerSide(gBattleScripting.battler);
-
-    PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gBattleMons[gBattleScripting.battler].ability)
-
-    for (;gBattlerTarget < gBattlersCount; gBattlerTarget++)
-    {
-        if (GetBattlerSide(gBattlerTarget) == side)
-            continue;
-        if (!(gAbsentBattlerFlags & gBitTable[gBattlerTarget]))
-            break;
-    }
-
-    if (gBattlerTarget >= gBattlersCount)
-        gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 1);
-    else
-        gBattlescriptCurrInstr += 5;
-}
-
-static void Cmd_trygetmystifytarget(void)
+    // Mystify check included in this command because of lack of space in macros
+if (gLastUsedAbility == ABILITY_MYSTIFY)
 {
-    u8 side;
-
     gBattleScripting.battler = gBattleStruct->mystifyBattler;
+}
+else
+{
+    gBattleScripting.battler = gBattleStruct->intimidateBattler;
+}    
     side = GetBattlerSide(gBattleScripting.battler);
 
     PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gBattleMons[gBattleScripting.battler].ability)

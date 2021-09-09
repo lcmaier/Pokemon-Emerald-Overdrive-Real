@@ -6862,7 +6862,7 @@ BattleScript_MystifyActivates::
 	call BattleScript_AbilityPopUp
 BattleScript_MystifyActivatesLoop:
 	setstatchanger STAT_SPATK, 1, TRUE
-	trygetmystifytarget BattleScript_MystifyActivatesReturn
+	trygetintimidatetarget BattleScript_MystifyActivatesReturn
 	jumpifstatus2 BS_TARGET, STATUS2_SUBSTITUTE, BattleScript_MystifyActivatesLoopIncrement
 	jumpifability BS_TARGET, ABILITY_CLEAR_BODY, BattleScript_MystifyPrevented
 	jumpifability BS_TARGET, ABILITY_HYPER_CUTTER, BattleScript_MystifyPrevented

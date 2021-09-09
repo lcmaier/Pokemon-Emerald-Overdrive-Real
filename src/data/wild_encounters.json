@@ -812,18 +812,18 @@
             "mons": [
               {
                 "min_level": 12,
-                "max_level": 12,
-                "species": "SPECIES_POOCHYENA"
+                "max_level": 14,
+                "species": "SPECIES_MINCCINO"
               },
               {
                 "min_level": 12,
-                "max_level": 12,
+                "max_level": 14,
                 "species": "SPECIES_ELECTRIKE"
               },
               {
                 "min_level": 12,
                 "max_level": 12,
-                "species": "SPECIES_GULPIN"
+                "species": "SPECIES_FLABEBE"
               },
               {
                 "min_level": 13,
@@ -833,12 +833,12 @@
               {
                 "min_level": 14,
                 "max_level": 15,
-                "species": "SPECIES_JIGGLYPUFF"
+                "species": "SPECIES_GULPIN"
               },
               {
                 "min_level": 13,
                 "max_level": 15,
-                "species": "SPECIES_ELEKID"
+                "species": "SPECIES_YAMPER"
               },
               {
                 "min_level": 13,
@@ -848,7 +848,7 @@
               {
                 "min_level": 13,
                 "max_level": 13,
-                "species": "SPECIES_GULPIN"
+                "species": "SPECIES_JIGGLYPUFF"
               },
               {
                 "min_level": 12,
@@ -857,8 +857,8 @@
               },
               {
                 "min_level": 12,
-                "max_level": 12,
-                "species": "SPECIES_WINGULL"
+                "max_level": 14,
+                "species": "SPECIES_EEVEE"
               },
               {
                 "min_level": 13,

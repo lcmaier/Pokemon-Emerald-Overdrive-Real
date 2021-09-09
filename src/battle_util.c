@@ -3889,6 +3889,15 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u16 ability, u8 special, u16 move
                         effect++;
                     }
                     break;
+                case WEATHER_SNOW:
+                    if (!(gBattleWeather & WEATHER_HAIL_ANY))
+                    {
+                        gBattleWeather = WEATHER_HAIL_ANY;
+                        gBattleScripting.animArg1 = B_ANIM_HAIL_CONTINUES;
+                        gBattleScripting.battler = battler;
+                        effect++;
+                    }
+                    break; 
                 }
             }
             if (effect)
@@ -4374,7 +4383,6 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u16 ability, u8 special, u16 move
                 }
                 break;
             SOLAR_POWER_HP_DROP:
-            case ABILITY_SOLAR_POWER:
                 if (WEATHER_HAS_EFFECT && gBattleWeather & WEATHER_SUN_ANY)
                 {
                     BattleScriptPushCursorAndCallback(BattleScript_SolarPowerActivates);
