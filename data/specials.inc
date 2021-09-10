@@ -544,3 +544,4 @@ gSpecials::
 	def_special IsSelectedMonRotom
 	def_special DoesRotomKnowSpecialMove
 	def_special GetRotomNewSpecialMove
+	def_special TryChangeDeoxysForm

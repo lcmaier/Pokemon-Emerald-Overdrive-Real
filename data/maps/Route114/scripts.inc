@@ -74,6 +74,13 @@ Route114_EventScript_Poochyena::
 	release
 	end
 
+Route114_EventScript_MeteorShower::
+	lock
+	faceplayer
+	msgbox Route114_Text_MeteorShower, MSGBOX_DEFAULT
+	release
+	end
+
 Route114_EventScript_MeteorFallsSign::
 	msgbox Route114_Text_MeteorFallsSign, MSGBOX_SIGN
 	end
@@ -209,3 +216,11 @@ Route114_Text_FossilManiacsHouseSign:
 Route114_Text_LanettesHouse:
 	.string "LANETTE'S HOUSE$"
 
+Route114_Text_MeteorShower:
+	.string "Do you see that island over there?/p"
+	.string "We had a very intense {COLOR RED}meteor shower/l"
+	.string "{COLOR DARK_GRAY}a few months ago. The next day,/l"
+	.string "the island had appeared out of nowhere!/p"
+	.string "I wonder if there was something in those/l"
+	.string "meteorites that would cause such a/l"
+	.string "powerful reaction...$" 

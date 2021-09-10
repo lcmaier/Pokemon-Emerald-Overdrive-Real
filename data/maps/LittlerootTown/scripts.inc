@@ -1017,9 +1017,9 @@ LittlerootTown_Text_BirchSpendsDaysInLab:
 	.string "PROF. BIRCH used to have a bunch of\n"
 	.string "{COLOR RED}rare pokemon {COLOR DARK_GRAY}from other regions,\l"
 	.string "but then one day most of them escaped.\p"
-	.string "I've seen some of the {COLOR BLUE}Water {COLOR DARK_GRAY}and {COLOR GREEN}Grass\n"
-	.string "{COLOR DARK_GRAY}types past this pond, but I'm not sure\l"
-	.string "where the {COLOR RED}Fire {COLOR DARK_GRAY}ones went...$"
+	.string "I've seen some of the {COLOR GREEN}Grass types\n"
+	.string "{COLOR DARK_GRAY}on the other side of this pond, but I'm not sure\l"
+	.string "where the {COLOR BLUE}Water {COLOR DARK_GRAY}or {COLOR RED}Fire {COLOR DARK_GRAY}ones went...$"
 
 LittlerootTown_Text_IfYouGoInGrassPokemonWillJumpOut:
 	.string "Um, um, um!\p"
