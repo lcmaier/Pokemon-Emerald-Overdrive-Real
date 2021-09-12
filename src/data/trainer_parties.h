@@ -12441,3 +12441,49 @@ static const struct TrainerMonNoItemDefaultMoves sParty_MayLinkPlaceholder[] = {
     .species = SPECIES_KYOGRE,
     }
 };
+
+static const struct TrainerMonItemCustomMoves sParty_Tyler[] = {
+    {
+    .iv = 255,
+    .lvl = 45,
+    .species = SPECIES_INCINEROAR,
+    .heldItem = ITEM_INCINIUM_Z,
+    .moves = {MOVE_PARTING_SHOT, MOVE_DARKEST_LARIAT, MOVE_EARTHQUAKE, MOVE_U_TURN}
+    },
+    {
+    .iv = 255,
+    .lvl = 45,
+    .species = SPECIES_CHARIZARD,
+    .heldItem = ITEM_CHARIZARDITE_Y,
+    .moves = {MOVE_SOLAR_BEAM, MOVE_FIRE_BLAST, MOVE_FOCUS_BLAST, MOVE_ROOST}
+    },
+    {
+    .iv = 255,
+    .lvl = 45,
+    .species = SPECIES_INFERNAPE,
+    .heldItem = ITEM_CHOICE_SCARF,
+    .moves = {MOVE_FLARE_BLITZ, MOVE_CLOSE_COMBAT, MOVE_GUNK_SHOT, MOVE_STONE_EDGE}
+    },
+    {
+    .iv = 255,
+    .lvl = 45,
+    .species = SPECIES_TYPHLOSION,
+    .heldItem = ITEM_CHOICE_SPECS,
+    .moves = {MOVE_ERUPTION, MOVE_EARTH_POWER, MOVE_FIRE_BLAST, MOVE_FOCUS_BLAST}
+    },
+    {
+    .iv = 255,
+    .lvl = 45,
+    .species = SPECIES_BLAZIKEN,
+    .heldItem = ITEM_LIFE_ORB,
+    .moves = {MOVE_SWORDS_DANCE, MOVE_CLOSE_COMBAT, MOVE_THUNDER_PUNCH, MOVE_FLARE_BLITZ}
+    },
+    {
+    .iv = 255,
+    .lvl = 45,
+    .species = SPECIES_DELPHOX,
+    .heldItem = ITEM_CHARTI_BERRY,
+    .moves = {MOVE_CALM_MIND, MOVE_FIRE_BLAST, MOVE_DAZZLING_GLEAM, MOVE_PSYCHIC}
+    }
+};
+

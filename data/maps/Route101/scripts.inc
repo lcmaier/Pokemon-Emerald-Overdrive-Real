@@ -210,6 +210,34 @@ Route101_EventScript_Youngster::
 	msgbox Route101_Text_TakeTiredPokemonToPokeCenter, MSGBOX_NPC
 	end
 
+Route101_EventScript_YoungsterTest::
+	lock
+	faceplayer
+	msgbox Route101_Text_Latios, MSGBOX_DEFAULT
+	getpartysize
+	compare VAR_RESULT, 6
+	goto_if_eq Route101_EventScript_PartyFull
+	givemon SPECIES_LATIOS, 100, ITEM_SOUL_DEW
+	playfanfare MUS_OBTAIN_ITEM
+	msgbox Route101_Text_ReceivedLatios, MSGBOX_DEFAULT
+	waitfanfare
+	release
+	end
+
+Route101_EventScript_PartyFull::
+	msgbox Route101_Text_PartyFull, MSGBOX_DEFAULT
+	release
+	end
+
+Route101_Text_Latios:
+	.string "Go pwn noobz.$"
+
+Route101_Text_ReceivedLatios:
+	.string "{PLAYER} receieved Latios!$"
+
+Route101_Text_PartyFull:
+	.string "Party full.$"					
+
 Route101_EventScript_Boy::
 	msgbox Route101_Text_WildPokemonInTallGrass, MSGBOX_NPC
 	end
@@ -223,6 +251,7 @@ Route101_EventScript_BirchsBag::
 	faceplayer
 	setflag FLAG_SYS_POKEMON_GET
 	setflag FLAG_RESCUED_BIRCH
+	setflag FLAG_FOSSIL_GIRL
 	fadescreen FADE_TO_BLACK
 	removeobject LOCALID_ZIGZAGOON
 	setobjectxy OBJ_EVENT_ID_PLAYER, 6, 13

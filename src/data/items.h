@@ -4591,7 +4591,7 @@ const struct Item gItems[] =
         .itemId = ITEM_OLD_AMBER,
         .description = sOldAmberDesc,
         #if I_KEY_FOSSILS >= GEN_4
-            .price = 10000,
+            .price = 50000,
             .pocket = POCKET_ITEMS,
         #else
             .price = 0,
@@ -4630,7 +4630,7 @@ const struct Item gItems[] =
     {
         .name = _("Armor Fossil"),
         .itemId = ITEM_ARMOR_FOSSIL,
-        .price = 7000,
+        .price = 10000,
         .description = sArmorFossilDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
@@ -4641,7 +4641,7 @@ const struct Item gItems[] =
     {
         .name = _("Skull Fossil"),
         .itemId = ITEM_SKULL_FOSSIL,
-        .price = 7000,
+        .price = 15000,
         .description = sSkullFossilDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
@@ -4654,7 +4654,7 @@ const struct Item gItems[] =
         .itemId = ITEM_HELIX_FOSSIL,
         .description = sHelixFossilDesc,
         #if I_KEY_FOSSILS >= GEN_4
-            .price = 7000,
+            .price = 10000,
             .pocket = POCKET_ITEMS,
         #else
             .price = 0,
@@ -4671,7 +4671,7 @@ const struct Item gItems[] =
         .itemId = ITEM_DOME_FOSSIL,
         .description = sDomeFossilDesc,
         #if I_KEY_FOSSILS >= GEN_4
-            .price = 7000,
+            .price = 10000,
             .pocket = POCKET_ITEMS,
         #else
             .price = 0,
@@ -4720,7 +4720,7 @@ const struct Item gItems[] =
     {
         .name = _("Cover Fossil"),
         .itemId = ITEM_COVER_FOSSIL,
-        .price = 7000,
+        .price = 15000,
         .description = sCoverFossilDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
@@ -4731,7 +4731,7 @@ const struct Item gItems[] =
     {
         .name = _("Plume Fossil"),
         .itemId = ITEM_PLUME_FOSSIL,
-        .price = 7000,
+        .price = 15000,
         .description = sPlumeFossilDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
@@ -4742,7 +4742,7 @@ const struct Item gItems[] =
     {
         .name = _("Jaw Fossil"),
         .itemId = ITEM_JAW_FOSSIL,
-        .price = 7000,
+        .price = 30000,
         .description = sJawFossilDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
@@ -4753,7 +4753,7 @@ const struct Item gItems[] =
     {
         .name = _("Sail Fossil"),
         .itemId = ITEM_SAIL_FOSSIL,
-        .price = 7000,
+        .price = 10000,
         .description = sSailFossilDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,

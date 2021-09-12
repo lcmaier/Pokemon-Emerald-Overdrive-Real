@@ -24,6 +24,64 @@ Route114_OnFrame:
 	map_script_2 VAR_SHOULD_END_ABNORMAL_WEATHER, 1, AbnormalWeather_EventScript_EndEventAndCleanup_1
 	.2byte 0
 
+Route114_EventScript_FossilGirl::
+	lock
+	faceplayer
+	goto_if_set FLAG_FOSSIL_GIRL_INTRO, Route114_EventScript_FossilGirlShop
+	msgbox Route114_Text_FossilGirlIntro, MSGBOX_DEFAULT
+	setflag FLAG_FOSSIL_GIRL_INTRO
+	message Route114_Text_FossilGirlShop
+	waitmessage
+	pokemart Pokemart_Fossils
+	msgbox Route114_Text_FossilGirlEnd
+	release
+	end
+
+Route114_EventScript_FossilGirlShop::
+	lock
+	faceplayer
+	message Route114_Text_FossilGirlShop
+	waitmessage
+	pokemart Pokemart_Fossils
+	msgbox Route114_Text_FossilGirlEnd
+	release
+	end
+
+	.align 2
+Pokemart_Fossils:
+	.2byte ITEM_HELIX_FOSSIL
+	.2byte ITEM_DOME_FOSSIL
+	.2byte ITEM_ARMOR_FOSSIL
+	.2byte ITEM_SAIL_FOSSIL	
+	.2byte ITEM_SKULL_FOSSIL
+	.2byte ITEM_COVER_FOSSIL
+	.2byte ITEM_PLUME_FOSSIL
+	.2byte ITEM_JAW_FOSSIL
+	.2byte ITEM_OLD_AMBER
+	.2byte ITEM_NONE
+	release
+	end
+
+Route114_Text_FossilGirlIntro:
+	.string "Psst! Hey, over here!\p"
+	.string "My idiot brothers live in this house.\n"
+	.string "They're obsessed with FOSSILS, they\l"
+	.string "spend all their time trying to get\l"
+	.string "more.\p"
+	.string "But we still have to pay our mortgage,\n"
+	.string "so the financial responsibilities of\l"
+	.string "our family fall to me.\p"
+	.string "All of this is to say I can give you\n"
+	.string "the fossils my brother so fervently\l"
+	.string "protects, for a price.$"
+
+Route114_Text_FossilGirlShop:
+	.string "What would you like?$"
+
+Route114_Text_FossilGirlEnd:
+	.string "If you need more fossils,\n"
+	.string "I'll be here.$"		
+
 Route114_EventScript_Man::
 	lock
 	faceplayer

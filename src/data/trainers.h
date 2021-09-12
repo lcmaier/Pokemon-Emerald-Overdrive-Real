@@ -11941,18 +11941,18 @@ const struct Trainer gTrainers[] = {
         .party = {.NoItemDefaultMoves = sParty_Leaf},
     },
 
-    [TRAINER_BRENDAN_PLACEHOLDER] =
+    [TRAINER_TYLER] =
     {
-        .partyFlags = 0,
-        .trainerClass = TRAINER_CLASS_RS_PROTAG,
+        .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
+        .trainerClass = TRAINER_CLASS_YOUNGSTER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
-        .trainerPic = TRAINER_PIC_RS_BRENDAN,
-        .trainerName = _("BRENDAN"),
+        .trainerPic = TRAINER_PIC_YOUNGSTER,
+        .trainerName = _("TYLER"),
         .items = {},
-        .doubleBattle = FALSE,
-        .aiFlags = 0,
-        .partySize = ARRAY_COUNT(sParty_BrendanLinkPlaceholder),
-        .party = {.NoItemDefaultMoves = sParty_BrendanLinkPlaceholder},
+        .doubleBattle = TRUE,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
+        .partySize = ARRAY_COUNT(sParty_Tyler),
+        .party = {.ItemCustomMoves = sParty_Tyler},
     },
 
     [TRAINER_MAY_PLACEHOLDER] =

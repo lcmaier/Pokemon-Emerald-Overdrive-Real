@@ -17,6 +17,7 @@ MirageTower_4F_EventScript_RootFossil::
 	removeobject LOCALID_ROOT_FOSSIL
 	delay 30
 	setflag FLAG_CHOSE_ROOT_FOSSIL
+	clearflag FLAG_FOSSIL_GIRL
 	goto MirageTower_4F_EventScript_CollapseMirageTower
 	end
 
@@ -38,6 +39,7 @@ MirageTower_4F_EventScript_ClawFossil::
 	removeobject LOCALID_CLAW_FOSSIL
 	delay 30
 	setflag FLAG_CHOSE_CLAW_FOSSIL
+	clearflag FLAG_FOSSIL_GIRL
 	goto MirageTower_4F_EventScript_CollapseMirageTower
 	end
 
