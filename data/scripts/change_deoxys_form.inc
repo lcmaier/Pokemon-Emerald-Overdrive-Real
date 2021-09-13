@@ -4,7 +4,7 @@ ChangeDeoxysForm::
 	compare VAR_RESULT, YES
 	goto_if_eq ChangeDeoxysForm_Start
 ChangeDeoxysForm_End:
-	msgbox ChangeDeoxysForm_Text_End, MSGBOX_DEFAULT
+	msgbox ChangeDeoxysForm_Text_Cancel, MSGBOX_DEFAULT
 	releaseall
 	end
 
@@ -24,13 +24,14 @@ ChangeDeoxysForm_Success:
 	msgbox ChangeDeoxysForm_Text_Success, MSGBOX_DEFAULT
 	waitmoncry
 	waitbuttonpress
-	goto ChangeDeoxysForm_End
+	releaseall
+	end
 
 ChangeDeoxysForm_Text_Beginning:
 	.string "Would you like to touch\n"
 	.string "the meteorite?$"
 
-ChangeDeoxysForm_Text_End:
+ChangeDeoxysForm_Text_Cancel:
 	.string "You do not touch\n"
 	.string "the meteorite.$"
 

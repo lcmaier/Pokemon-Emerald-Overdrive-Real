@@ -1063,5 +1063,4 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/text/birch_speech.inc"
 	.include "data/scripts/rotom.inc"
 	.include "data/scripts/change_deoxys_form.inc"
-
 	.include "data/maps/FieryPath_InnerRoom/scripts.inc"
