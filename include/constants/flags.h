@@ -43,8 +43,8 @@
 
 #define FLAG_FOSSIL_GIRL     0x20 // Unused Flag
 #define FLAG_FOSSIL_GIRL_INTRO    0x21 // Unused Flag
-#define FLAG_UNUSED_0x022    0x22 // Unused Flag
-#define FLAG_UNUSED_0x023    0x23 // Unused Flag
+#define FLAG_ROTOM_CAUGHT    0x22 // Unused Flag
+#define FLAG_ROTOM_DEFEATED    0x23 // Unused Flag
 #define FLAG_UNUSED_0x024    0x24 // Unused Flag
 #define FLAG_UNUSED_0x025    0x25 // Unused Flag
 #define FLAG_UNUSED_0x026    0x26 // Unused Flag

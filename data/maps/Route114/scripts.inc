@@ -281,4 +281,4 @@ Route114_Text_MeteorShower:
 	.string "the island had appeared out of nowhere!/p"
 	.string "I wonder if there was something in those/l"
 	.string "meteorites that would cause such a/l"
-	.string "powerful reaction...$" 
+	.string "powerful reaction…$" 

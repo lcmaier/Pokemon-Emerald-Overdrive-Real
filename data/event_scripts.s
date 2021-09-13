@@ -1064,3 +1064,4 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/scripts/rotom.inc"
 	.include "data/scripts/change_deoxys_form.inc"
 	.include "data/maps/FieryPath_InnerRoom/scripts.inc"
+	.include "data/maps/NewMauville_Center/scripts.inc"

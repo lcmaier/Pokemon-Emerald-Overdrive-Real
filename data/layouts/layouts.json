@@ -1844,7 +1844,7 @@
     {
       "id": "LAYOUT_NEW_MAUVILLE_INSIDE",
       "name": "NewMauville_Inside_Layout",
-      "width": 41,
+      "width": 53,
       "height": 41,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_BikeShop",
@@ -4420,6 +4420,16 @@
       "secondary_tileset": "gTileset_Lavaridge",
       "border_filepath": "data/layouts/FieryPath_InnerRoom/border.bin",
       "blockdata_filepath": "data/layouts/FieryPath_InnerRoom/map.bin"
+    },
+    {
+      "id": "LAYOUT_NEW_MAUVILLE_CENTER",
+      "name": "NewMauville_Center_Layout",
+      "width": 14,
+      "height": 21,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_BikeShop",
+      "border_filepath": "data/layouts/NewMauville_Center/border.bin",
+      "blockdata_filepath": "data/layouts/NewMauville_Center/map.bin"
     }
   ]
 }

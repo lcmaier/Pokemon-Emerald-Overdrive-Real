@@ -42,6 +42,7 @@ NewMauville_Inside_EventScript_ShowVoltorb3::
 NewMauville_Inside_OnLoad:
 	compare VAR_NEW_MAUVILLE_STATE, 2
 	call_if_eq NewMauville_Inside_EventScript_SetGeneratorOffMetatiles
+	call_if_eq NewMauville_Inside_EventScript_OpenRotomPath
 	end
 
 NewMauville_Inside_EventScript_BlueButton::
@@ -149,8 +150,43 @@ NewMauville_Inside_EventScript_RedButton::
 	msgbox NewMauville_Inside_Text_SteppedOnSwitchGeneratorStopped, MSGBOX_DEFAULT
 	call NewMauville_Inside_EventScript_SetGeneratorOffMetatiles
 	setvar VAR_NEW_MAUVILLE_STATE, 2
+	delay 200
+	playse SE_PIN
+	call NewMauville_Inside_EventScript_OpenRotomPath
+	delay 40
+	msgbox NewMauville_Inside_Text_RotomPathRevealed, MSGBOX_DEFAULT
 	releaseall
 	end
+
+NewMauville_Inside_EventScript_OpenRotomPath::
+	setmetatile 40, 6, 0x296, 1
+	setmetatile 40, 5, 0x28E, 0
+	setmetatile 40, 3, 0x28C, 1
+	setmetatile 40, 4, 0x294, 1
+	setmetatile 41, 6, 0x227, 1
+	setmetatile 41, 5, 0x237, 0
+	setmetatile 41, 4, 0x227, 1
+	setmetatile 41, 3, 0x21F, 1
+	setmetatile 42, 6, 0x227, 1
+	setmetatile 42, 5, 0x237, 0
+	setmetatile 42, 4, 0x227, 1
+	setmetatile 42, 3, 0x21F, 1
+	setmetatile 43, 6, 0x227, 1
+	setmetatile 43, 5, 0x237, 0
+	setmetatile 43, 4, 0x227, 1
+	setmetatile 43, 3, 0x21F, 1
+	setmetatile 44, 6, 0x227, 1
+	setmetatile 44, 5, 0x237, 0
+	setmetatile 44, 4, 0x227, 1
+	setmetatile 44, 3, 0x21F, 1
+	setmetatile 45, 6, 0x227, 1
+	setmetatile 45, 5, 0x237, 0
+	setmetatile 45, 4, 0x227, 1
+	setmetatile 45, 3, 0x21F, 1
+	setmetatile 46, 6, 0x227, 1
+	setmetatile 46, 5, 0x237, 0
+	setmetatile 46, 4, 0x227, 1
+	setmetatile 46, 3, 0x21F, 1
 
 NewMauville_Inside_EventScript_SetGeneratorOffMetatiles::
 	setmetatile 33, 6, METATILE_BikeShop_Button_Pressed, 0
@@ -275,3 +311,8 @@ NewMauville_Inside_Text_SteppedOnSwitchGeneratorStopped:
 	.string "… … … … … … … …\p"
 	.string "The generator appears to have\n"
 	.string "stopped…$"
+
+NewMauville_Inside_Text_RotomPathRevealed:
+	.string "Turning off the generator\n"
+	.string "unlocked a hidden door!$"
+
