@@ -217,7 +217,7 @@ Route101_EventScript_YoungsterTest::
 	getpartysize
 	compare VAR_RESULT, 6
 	goto_if_eq Route101_EventScript_PartyFull
-	givemon SPECIES_PORYGON, 10, ITEM_UP_GRADE
+	givemon SPECIES_POLIWHIRL, 10, ITEM_KINGS_ROCK
 	playfanfare MUS_OBTAIN_ITEM
 	msgbox Route101_Text_ReceivedLatios, MSGBOX_DEFAULT
 	waitfanfare
