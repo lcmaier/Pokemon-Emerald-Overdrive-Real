@@ -3163,11 +3163,10 @@ const struct Item gItems[] =
         .name = _("Upgrade"),
         .itemId = ITEM_UP_GRADE,
         .price = 2000,
-        .holdEffect = HOLD_EFFECT_UP_GRADE,
         .description = sUpGradeDesc,
         .pocket = POCKET_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
     },
 
     [ITEM_SHELL_BELL] =
