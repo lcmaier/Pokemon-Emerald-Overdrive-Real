@@ -143,6 +143,33 @@ void HandleRepelMenuChoice(void)
     VarSet(VAR_REPEL_STEP_COUNT, ItemId_GetHoldEffectParam(gSpecialVar_0x8004));
 }
 
+void TryDrawFossilMenu(void)
+{
+    static const u16 fossilItems[] = {ITEM_OLD_AMBER, ITEM_HELIX_FOSSIL, ITEM_DOME_FOSSIL, ITEM_ROOT_FOSSIL, ITEM_CLAW_FOSSIL, ITEM_SKULL_FOSSIL, ITEM_ARMOR_FOSSIL, ITEM_COVER_FOSSIL, ITEM_PLUME_FOSSIL, ITEM_JAW_FOSSIL, ITEM_SAIL_FOSSIL};
+    struct MenuAction menuItems[12] = {NULL};
+    int i, count = 0;
+
+    for (i = 0; i < ARRAY_COUNT(fossilItems); i++)
+    {
+        if (CheckBagHasItem(fossilItems[i], 1))
+        {
+            VarSet(VAR_0x8004 + count, fossilItems[i]);
+            menuItems[count].text = ItemId_GetName(fossilItems[i]);
+            count++;
+        }
+    }
+
+    if (count > 1)
+        DrawMultichoiceMenuCustom(0, 0, 0, FALSE, 0, menuItems, count);
+
+    gSpecialVar_Result = (count > 1);    
+}
+
+void HandleFossilMenuChoice(void)
+{
+    gSpecialVar_0x8004 = VarGet(VAR_0x8004 + gSpecialVar_Result); // gets item ID
+}
+
 #define tLeft           data[0]
 #define tTop            data[1]
 #define tRight          data[2]
