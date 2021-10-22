@@ -217,9 +217,7 @@ Route101_EventScript_YoungsterTest::
 	getpartysize
 	compare VAR_RESULT, 6
 	goto_if_eq Route101_EventScript_PartyFull
-	giveitem ITEM_OLD_AMBER, 1
-	giveitem ITEM_JAW_FOSSIL, 1
-	giveitem ITEM_CLAW_FOSSIL, 1
+	givemon SPECIES_MACHAMP, 40, ITEM_NONE
 	playfanfare MUS_OBTAIN_ITEM
 	msgbox Route101_Text_ReceivedLatios, MSGBOX_DEFAULT
 	waitfanfare

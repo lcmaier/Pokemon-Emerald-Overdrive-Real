@@ -93,7 +93,9 @@
     "Underwater_Route128",
     "Underwater_Route129",
     "Underwater_Route105",
-    "Underwater_Route125"
+    "Underwater_Route125",
+    "TrainingCave",
+    "TrainingCave_MainRoom"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",
@@ -432,7 +434,8 @@
     "AlteringCave",
     "MeteorFalls_StevensCave",
     "FieryPath_InnerRoom",
-    "NewMauville_Center"
+    "NewMauville_Center",
+    "TrainingCave_XPRoom"
   ],
   "gMapGroup_IndoorDynamic": [
     "SecretBase_RedCave1",

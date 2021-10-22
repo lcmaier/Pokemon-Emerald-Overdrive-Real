@@ -1065,3 +1065,9 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/scripts/change_deoxys_form.inc"
 	.include "data/maps/FieryPath_InnerRoom/scripts.inc"
 	.include "data/maps/NewMauville_Center/scripts.inc"
+
+	.include "data/maps/TrainingCave/scripts.inc"
+
+	.include "data/maps/TrainingCave_MainRoom/scripts.inc"
+
+	.include "data/maps/TrainingCave_XPRoom/scripts.inc"

@@ -4430,6 +4430,36 @@
       "secondary_tileset": "gTileset_BikeShop",
       "border_filepath": "data/layouts/NewMauville_Center/border.bin",
       "blockdata_filepath": "data/layouts/NewMauville_Center/map.bin"
+    },
+    {
+      "id": "LAYOUT_TRAINING_CAVE",
+      "name": "TrainingCave_Layout",
+      "width": 30,
+      "height": 30,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Mossdeep",
+      "border_filepath": "data/layouts/TrainingCave/border.bin",
+      "blockdata_filepath": "data/layouts/TrainingCave/map.bin"
+    },
+    {
+      "id": "LAYOUT_TRAINING_CAVE_MAIN_ROOM",
+      "name": "TrainingCave_MainRoom_Layout",
+      "width": 42,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/TrainingCave_MainRoom/border.bin",
+      "blockdata_filepath": "data/layouts/TrainingCave_MainRoom/map.bin"
+    },
+    {
+      "id": "LAYOUT_TRAINING_CAVE_XPROOM",
+      "name": "TrainingCave_XPRoom_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/TrainingCave_XPRoom/border.bin",
+      "blockdata_filepath": "data/layouts/TrainingCave_XPRoom/map.bin"
     }
   ]
 }

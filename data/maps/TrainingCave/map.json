@@ -1,0 +1,41 @@
+{
+  "id": "MAP_TRAINING_CAVE",
+  "name": "TrainingCave",
+  "layout": "LAYOUT_TRAINING_CAVE",
+  "music": "MUS_ROUTE120",
+  "region_map_section": "MAPSEC_TRAINING_CAVE",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_OCEAN_ROUTE",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": 0,
+  "object_events": [
+
+  ],
+  "warp_events": [
+    {
+      "x": 14,
+      "y": 20,
+      "elevation": 0,
+      "dest_map": "MAP_TRAINING_CAVE_MAIN_ROOM",
+      "dest_warp_id": 0
+    },
+    {
+      "x": 11,
+      "y": 22,
+      "elevation": 0,
+      "dest_map": "MAP_OLDALE_TOWN",
+      "dest_warp_id": 2
+    }
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+
+  ]
+}
